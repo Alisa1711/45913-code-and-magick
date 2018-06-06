@@ -44,14 +44,11 @@ var getRandomProperty = function (property) {
 
 var generateWizards = function (wizards, names, surnames, coats, eyes) {
   for (var i = 0; i < wizards.length; i++) {
-    var wizard = {};
-
-    wizard.firstName = getRandomProperty(names);
-    wizard.lastName = getRandomProperty(surnames);
-    wizard.coatColor = getRandomProperty(coats);
-    wizard.eyesColor = getRandomProperty(eyes);
-
-    wizards[i] = wizard;
+    wizards[i] = {
+      name: getRandomProperty(names) + ' ' + getRandomProperty(surnames),
+      coatColor: getRandomProperty(coats),
+      eyesColor: getRandomProperty(eyes)
+    };
   }
   return wizards;
 };
@@ -61,9 +58,9 @@ var renderWizard = function (wizard) {
       .querySelector('.setup-similar-item');
   var similiarWizard = wizardTemplate.cloneNode(true);
 
-  similiarWizard.querySelector('.setup-similar-label').textContent = wizard.firstName + ' ' + wizard.lastName;
+  similiarWizard.querySelector('.setup-similar-label').textContent = wizard.name;
   similiarWizard.querySelector('.wizard-coat').style.fill = wizard.coatColor;
-  similiarWizard.querySelector('.wizard-eyes').style.fill = wizard.eyeColor;
+  similiarWizard.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
   return similiarWizard;
 };
