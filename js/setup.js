@@ -38,7 +38,7 @@ var eyesColors = [
   'green'
 ];
 
-var randomProperty = function (property) {
+var getRandomProperty = function (property) {
   return property[Math.floor(Math.random() * property.length)];
 };
 
@@ -46,10 +46,10 @@ var generateWizards = function (wizards, names, surnames, coats, eyes) {
   for (var i = 0; i < wizards.length; i++) {
     var wizard = {};
 
-    wizard.firstName = randomProperty(names);
-    wizard.lastName = randomProperty(surnames);
-    wizard.coatColor = randomProperty(coats);
-    wizard.eyesColor = randomProperty(eyes);
+    wizard.firstName = getRandomProperty(names);
+    wizard.lastName = getRandomProperty(surnames);
+    wizard.coatColor = getRandomProperty(coats);
+    wizard.eyesColor = getRandomProperty(eyes);
 
     wizards[i] = wizard;
   }
