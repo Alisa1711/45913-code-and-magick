@@ -8,9 +8,9 @@ var iconClose = setupModal.querySelector('.setup-close');
 var userNameInput = setupModal.querySelector('.setup-user-name');
 var setupWizard = setupModal.querySelector('.setup-wizard');
 var wizardCoat = setupWizard.querySelector('.wizard-coat');
-var wizardCoatInput = setupWizard.querySelector('input[name=coat-color]');
+var wizardCoatInput = setupModal.querySelector('input[name=coat-color]');
 var wizardEyes = setupWizard.querySelector('.wizard-eyes');
-var wizardEyesInput = setupWizard.querySelector('input[name=eyes-color]');
+var wizardEyesInput = setupModal.querySelector('input[name=eyes-color]');
 var fireball = setupModal.querySelector('.setup-fireball-wrap');
 var fireballInput = fireball.querySelector('input[name=fireball-color]');
 
